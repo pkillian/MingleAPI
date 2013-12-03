@@ -5,6 +5,7 @@
 #### Routes
 
 /
+
 Methods: Any
 Returns: hostname of server, if server is running
 
