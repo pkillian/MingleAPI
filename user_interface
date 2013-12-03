@@ -7,25 +7,25 @@ User Interface
 
 
 
-User enters their profile for the first time...
+User adds/changes their profile...
 
   ____________________________
   |                          |
   | User Profile             |
+  |       _________          |
+  |      |         |         |
+  |      |         |         |
+  |      |   Pic   |         |
+  |      |         |         |
+  |      |_________|         |
   |                          |
-  |    Name: _______         |
+  |    Name:      James      |
   |                          |
+  |    Password:  ********   |
   |                          |
-  |    Search topics ->      |
+  |    Gender:    M          |
   |                          |
-  |    See topics ->         |
-  |                          |
-  |                          |
-  |                          |
-  |                          |
-  |                          |
-  |                          |
-  |                          |
+  |    Topics ...            |
   ____________________________
 
 
@@ -51,19 +51,19 @@ User can pick topics from a list of ones that are trending in their geographical
   ____________________________
 
 
-User can search for topics 
+User can search for topics...
 
   ____________________________
   |                          |
   | Search Topics            |
   |                          |
   |                          |
-  |     FISHING              |
+  |     Che                  |
   |    _______________       |
   |                          |
+  |     Checkers             |
   |                          |
-  |                          |
-  |                          |
+  |     Chess                |
   |                          |
   |                          |
   |                          |
@@ -119,27 +119,6 @@ Another user looks for broadcasted messages...
   ____________________________
 
 
-User edits their profile...
-
-  ____________________________
-  |                          |
-  | User Profile             |
-  |                          |
-  |    Name: _______         |
-  |                          |
-  |                          |
-  |    Topics:               |
-  |                          |
-  |      _______________     |
-  |                          |
-  |      _______________     |
-  |                          |
-  |      _______________     |
-  |                          |
-  |          .               |
-  |          .               |
-  |          .               |
-  ____________________________
 
 
 
