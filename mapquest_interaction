@@ -1,0 +1,22 @@
+
+Use MapQuest APIs to store and retrieve locations
+
+   http://www.mapquestapi.com/
+
+
+Use the Data Manager to store data points for each user / company
+
+   http://developer.mapquest.com/web/documentation/sdk/datamanager/v2.0
+
+
+Store a given user's current location...
+
+
+Update a given user's current location...
+
+
+Query for all users within a given radius of a given location...
+
+
+
+

@@ -1,0 +1,150 @@
+
+
+
+User Interface
+===============
+
+
+
+
+User adds/changes their profile...
+
+  ____________________________
+  |                          |
+  | User Profile      <save> |
+  |       _________          |
+  |      |         |         |
+  |      |         |         |
+  |      |   Pic   |         |
+  |      |         |         |
+  |      |_________|         |
+  |                          |
+  |    Name:      James      |
+  |                          |
+  |    Password:  ********   |
+  |                          |
+  |    Gender:    M          |
+  |                          |
+  |    Topics ...            |
+  |__________________________|
+
+
+User can pick topics from a list of ones that are trending in their geographical region...
+
+  ____________________________
+  |                          |
+  | Common Topics            |
+  |                          |
+  |    topic 1               |
+  |                          |
+  |    topic 2               |
+  |                          |
+  |    topic 3               |
+  |                          |
+  |    topic 4               |
+  |                          |
+  |    topic 5               |
+  |                          |
+  |      .                   |
+  |      .                   |
+  |      .                   |
+  |__________________________|
+
+
+User can search for topics...
+
+  ____________________________
+  |                          |
+  | Search Topics            |
+  |                          |
+  |                          |
+  |     Che                  |
+  |    _______________       |
+  |                          |
+  |     Checkers             |
+  |                          |
+  |     Chess                |
+  |                          |
+  |                          |
+  |                          |
+  |                          |
+  |                          |
+  |                          |
+  |__________________________|
+
+
+User broadcasts a message to a given region...
+
+  ____________________________
+  |                          |
+  |  Send message            |
+  |                          |
+  |                          |
+  |    __________________    |
+  |                          |
+  |    __________________    |
+  |                          |
+  |    __________________    |
+  |                          |
+  |    __________________    |
+  |                          |
+  |                          |
+  |                          |
+  |        < SEND >          |
+  |                          |
+  |__________________________|
+
+
+Advertiser pays to associate a message with a given region and/or topic
+
+Another user looks for broadcasted messages...
+
+  ____________________________
+  |                          |
+  |  Tap result to interact  |
+  |                          |
+  |                          |
+  |   1) User A       1m     |
+  |                          |
+  |   2) User X       10m    |
+  |                          |
+  |   3) Company C    20m    |
+  |                          |
+  |   4) User Y       100m   |
+  |                          |
+  |   5) User D       200m   |
+  |                          |
+  |      <scroll down>       |
+  |                          |
+  |__________________________|
+
+
+
+
+
+
+
+
+
+
+Template...
+
+  ____________________________
+  |                          |
+  |                          |
+  |                          |
+  |                          |
+  |                          |
+  |                          |
+  |                          |
+  |                          |
+  |                          |
+  |                          |
+  |                          |
+  |                          |
+  |                          |
+  |                          |
+  |                          |
+  |                          |
+  |__________________________|
+
