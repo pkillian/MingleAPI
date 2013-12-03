@@ -4,19 +4,109 @@ Use MapQuest APIs to store and retrieve locations
    http://www.mapquestapi.com/
 
 
-Use the Data Manager to store data points for each user / company
+Use the Data Manager to store data points for each user/company
 
    http://developer.mapquest.com/web/documentation/sdk/datamanager/v2.0
 
 
-Store a given user's current location...
+Get an AppKey first...
+
+   Name:            mingleAppKey
+   ClientID:        122386
+   Application Key: Fmjtd%7Cluubn16bnl%2C75%3Do5-90ax5y
+   Type:            community edition
 
 
-Update a given user's current location...
+NOTE:
+
+   Community Edition keys can create up to 2 tables.
+   Community Edition keys have a limit of 10MB of data per table.
 
 
-Query for all users within a given radius of a given location...
+See what column types our tables can hold...
 
+   http://www.mapquestapi.com/datamanager/v2/get-column-types?key=[APPLICATION_KEY]
+
+   {
+    "types": [
+        "Geography",
+        "String",
+        "Numeric",
+        "Integer",
+        "Boolean",
+        "Text",
+        "FullAddress",
+        "Street",
+        "City",
+        "StateProvince",
+        "PostalCode",
+        "County",
+        "Country",
+        "Latitude",
+        "Longitude"
+    ],
+    "info": {
+        "statusCode": 0,
+        "copyright": {
+            "text": "(C) 2013 MapQuest, Inc.",
+            "imageUrl": "http://api.mqcdn.com/res/mqlogo.gif",
+            "imageAltText": "(C) 2013 MapQuest, Inc."
+        },
+        "messages": [ ]
+    }
+   }
+
+
+Create a table that includes fields for all of the data you want to store in Data Manager, along with a geography field...
+
+   http://developer.mapquest.com/web/documentation/sdk/datamanager/v2.0/tables#createTable
+
+
+   POST
+
+      http://www.mapquestapi.com/datamanager/v2/create-table?key=[APPLICATION_KEY]&inFormat=json&json={"clientId":"[CLIENT_ID]","password":"[REGISTRY_PASSWORD]","tableName":"mqap.[CLIENT_ID]_[TABLENAME]","friendlyName":"[friendly_name]","notes":"[notes]","columns":[{"name":"[NAME]","type":"[TYPE]","isPublic":[is_public]}...],"isPublic":"[is_public]"}
+
+
+      [APPLICATION_KEY]   - the application key.
+      [CLIENT_ID]         - the clientID associated with the application key
+      [REGISTRY_PASSWORD] - the registry password associated with the application key.
+      [TABLENAME]         - the name of the table.
+      [friendly_name]     - optional easy-to-read name that does not include the mqap prefix or clientID.
+      [notes]             - optional notes about the table.
+      [NAME]              - the name of the column.
+      [TYPE]              - the type of column.  See the get-column-types function to see a list of supported column types.
+      [is_public]         - permissions; determines if the table and/or column(s) is/are publicly accessible. Defaults to "false."
+
+
+   putting in the fields for our table...
+
+      http://www.mapquestapi.com/datamanager/v2/create-table?
+
+         key=Fmjtd%7Cluubn16bnl%2C75%3Do5-90ax5y
+         &inFormat=json
+         &json={"clientId":"122386","password":"REGISTRY_PASSWORD","tableName":"mqap.122386_users","friendlyName":"users",
+                    "columns":[
+                      {"name":"userid","type":"String"},
+                      {"name":"region","type":"Geography"},
+                    ]
+               }
+
+
+
+
+
+Upload data to our newly-created table (store given user's current location/area)...
+
+   http://developer.mapquest.com/web/documentation/sdk/datamanager/v2.0/data#uploadData
+
+   Our server will generate a unique ID for each user (or advertiser)
+
+   We will periodically update the mapquest table with the user's current location...
+
+        userID = xxxxxxx
+
+
+Given a new user's location, find all existing users whose area the new user is within...
 
 
 

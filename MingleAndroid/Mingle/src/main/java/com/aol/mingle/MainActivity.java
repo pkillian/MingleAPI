@@ -112,8 +112,28 @@ public class MainActivity extends Activity {
         // Upon interacting with UI controls, delay any scheduled hide()
         // operations to prevent the jarring behavior of controls going away
         // while interacting with the UI.
-        findViewById(R.id.main_signin_button).setOnTouchListener(mDelayHideTouchListener);
-        findViewById(R.id.main_register_button).setOnTouchListener(mLaunchRegisterListener);
+        
+        findViewById(R.id.main_register_button).setOnClickListener(new View.OnClickListener() {
+    		@Override
+    		public void onClick(View arg0) {
+    			try {
+    				
+    			} catch (Exception e) {
+    				e.printStackTrace();
+    			}
+    		}
+                });
+        
+        findViewById(R.id.main_signin_button).setOnClickListener(new View.OnClickListener() {
+    		@Override
+    		public void onClick(View arg0) {
+    			try {
+    				
+    			} catch (Exception e) {
+    				e.printStackTrace();
+    			}
+    		}
+                });
     }
 
     @Override
