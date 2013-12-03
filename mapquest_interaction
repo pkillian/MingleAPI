@@ -1,14 +1,18 @@
 
+
+###########################################################################
 Use MapQuest APIs to store and retrieve locations
 
    http://www.mapquestapi.com/
 
 
+###########################################################################
 Use the Data Manager to store data points for each user/company
 
    http://developer.mapquest.com/web/documentation/sdk/datamanager/v2.0
 
 
+###########################################################################
 Get an AppKey first...
 
    Name:            mingleAppKey
@@ -17,12 +21,13 @@ Get an AppKey first...
    Type:            community edition
 
 
-NOTE:
+   NOTE:
 
-   Community Edition keys can create up to 2 tables.
-   Community Edition keys have a limit of 10MB of data per table.
+      Community Edition keys can create up to 2 tables.
+      Community Edition keys have a limit of 10MB of data per table.
 
 
+###########################################################################
 See what column types our tables can hold...
 
    http://www.mapquestapi.com/datamanager/v2/get-column-types?key=[APPLICATION_KEY]
@@ -57,6 +62,7 @@ See what column types our tables can hold...
    }
 
 
+###########################################################################
 Create a table that includes fields for all of the data you want to store in Data Manager, along with a geography field...
 
    http://developer.mapquest.com/web/documentation/sdk/datamanager/v2.0/tables#createTable
@@ -64,7 +70,9 @@ Create a table that includes fields for all of the data you want to store in Dat
 
    POST
 
-      http://www.mapquestapi.com/datamanager/v2/create-table?key=[APPLICATION_KEY]&inFormat=json&json={"clientId":"[CLIENT_ID]","password":"[REGISTRY_PASSWORD]","tableName":"mqap.[CLIENT_ID]_[TABLENAME]","friendlyName":"[friendly_name]","notes":"[notes]","columns":[{"name":"[NAME]","type":"[TYPE]","isPublic":[is_public]}...],"isPublic":"[is_public]"}
+      http://www.mapquestapi.com/datamanager/v2/create-table?key=[APPLICATION_KEY]&inFormat=json
+          &json={"clientId":"[CLIENT_ID]","password":"[REGISTRY_PASSWORD]","tableName":"mqap.[CLIENT_ID]_[TABLENAME]",
+                 "friendlyName":"[friendly_name]","notes":"[notes]","columns":[{"name":"[NAME]","type":"[TYPE]","isPublic":[is_public]}...],"isPublic":"[is_public]"}
 
 
       [APPLICATION_KEY]   - the application key.
@@ -84,7 +92,7 @@ Create a table that includes fields for all of the data you want to store in Dat
 
          key=Fmjtd%7Cluubn16bnl%2C75%3Do5-90ax5y
          &inFormat=json
-         &json={"clientId":"122386","password":"REGISTRY_PASSWORD","tableName":"mqap.122386_users","friendlyName":"users",
+         &json={"clientId":"122386","password":"kK5jE3qU","tableName":"mqap.122386_users","friendlyName":"users",
                     "columns":[
                       {"name":"userid","type":"String"},
                       {"name":"region","type":"Geography"},
@@ -93,20 +101,97 @@ Create a table that includes fields for all of the data you want to store in Dat
 
 
 
+###########################################################################
+Add fields to our table (adding latitude and longitude now)...
+
+      http://www.mapquestapi.com/datamanager/v2/add-columns?
+
+         key=Fmjtd%7Cluubn16bnl%2C75%3Do5-90ax5y
+         &inFormat=json
+         &json={"clientId":"122386","password":"kK5jE3qU","tableName":"mqap.122386_users","columns":[{"name":"lat","type":"Latitude"},{"name":"long","type":"Longitude"}]}
 
 
+
+###########################################################################
+Delete fields from our table (removing geography now)...
+
+   http://www.mapquestapi.com/datamanager/v2/drop-columns?key=Fmjtd%7Cluubn16bnl%2C75%3Do5-90ax5y&inFormat=json
+
+      &json={"clientId":"122386","password":"kK5jE3qU","tableName":"mqap.122386_users","columnNames":[{"name":"region"}]}
+
+
+
+###########################################################################
 Upload data to our newly-created table (store given user's current location/area)...
 
    http://developer.mapquest.com/web/documentation/sdk/datamanager/v2.0/data#uploadData
 
    Our server will generate a unique ID for each user (or advertiser)
 
-   We will periodically update the mapquest table with the user's current location...
+   For the first time in the system, we will add a new record...
+        
 
-        userID = xxxxxxx
+   POST to http://www.mapquestapi.com/datamanager/v2/upload-data?key=Fmjtd%7Cluubn16bnl%2C75%3Do5-90ax5y&inFormat=json
+
+    {
+      "returnResults":true,
+      "clientId":"122386","password":"kK5jE3qU","tableName":"mqap.122386_users","append":true,
+      "rows":[
+        [ 
+          {"name":"userid","value":"1"},
+          {"name":"lat","value":39.00935},
+          {"name":"long","value":-77.43885},
+          {"name":"mqap_geography","value":"POLYGON((-77 39, -77 40, -76 40, -76 39, -77 39))"}
+        ]
+      ]
+    }
 
 
-Given a new user's location, find all existing users whose area the new user is within...
+
+   Target    45130 Columbia Place, Sterling, VA 20166     "lng":-77.43885,"lat":39.00935
+
+
+
+###########################################################################
+Update an existing record (a user has moved)...
+
+   We need to use mapquest's unique ID for the given user in order
+   to tell it the user has a new location.  Otherwise, we'd be adding
+   a new record and the user would be in multiple places.
+
+
+
+###########################################################################
+View the table layout...
+
+    http://www.mapquestapi.com/datamanager/v2/get-table-permissions?key=Fmjtd%7Cluubn16bnl%2C75%3Do5-90ax5y&inFormat=json&json={"clientId":"122386","password":"kK5jE3qU","tableName":"mqap.122386_users"}
+
+
+
+###########################################################################
+Obtain all records in the table...
+
+  http://www.mapquestapi.com/datamanager/v2/get-table-data?key=[APPLICATION_KEY]&inFormat=json&json={"clientId":"[CLIENT_ID]","password":"[REGISTRY_PASSWORD]","tableName":"[TABLENAME]"}&outFormat=csv
+
+  in our case...
+
+    http://www.mapquestapi.com/datamanager/v2/get-table-data?key=Fmjtd%7Cluubn16bnl%2C75%3Do5-90ax5y&inFormat=json&json={"clientId":"122386","password":"kK5jE3qU","tableName":"mqap.122386_users"}&outFormat=csv
+
+
+
+###########################################################################
+Given another user's location, find all existing users whose area the new user is within...
+
+  do a spacial search
+
+
+
+###########################################################################
+Talk to someone that already knows the API inside-out...
+
+    Mark Rebuck
+
+         works at MapQuest on the Search/Datamanager V2 APIs
 
 
 
