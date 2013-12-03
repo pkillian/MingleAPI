@@ -1,2 +1,16 @@
+MingleAndroid/*apk
+MingleAndroid/bin/
+MingleAndroid/gen/
+
+# Ignore Mac hidden dir file
+*.DS_Store
+
+# Ignore Android Studio (IntelliJ) hidden files
+MingleAndroid/*.iml
+MingleAndroid/*.ipr
+MingleAndroid/*.iws
+MingleAndroid/.idea/
+
+### Flask
 *.pyc
 *.log
