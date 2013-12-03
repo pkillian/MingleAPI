@@ -5,7 +5,7 @@ import json
 import socket
 
 import MingleAPI.authentication
-
+import MingleAPI.messaging
 
 @app.route("/")
 def health_check():

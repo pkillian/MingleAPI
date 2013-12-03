@@ -1,6 +1,10 @@
 from MingleAPI import app
 
-@app.route("/login")
+@app.route("/auth/login")
 def login():
-    return "login stuff will be here"
+    return "login"
+
+@app.route("/auth/logout")
+def logout():
+    return "logout"
 
