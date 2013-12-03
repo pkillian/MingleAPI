@@ -34,7 +34,7 @@
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
             android:layout_marginBottom="10dp"
-            android:text="@string/main_userName_text"
+            android:hint="@string/main_userName_text"
             android:textColor="#101010" />
 
         <EditText
@@ -44,8 +44,9 @@
             android:layout_gravity="center"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
-            android:text="@string/main_password_text"
-            android:textColor="#101010" />
+            android:hint="@string/main_password_text"
+            android:textColor="#101010"
+            android:inputType="textPassword" />
 
     </LinearLayout>
     <!-- This FrameLayout insets its children based on system windows using
