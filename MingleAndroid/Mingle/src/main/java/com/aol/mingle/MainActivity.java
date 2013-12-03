@@ -113,6 +113,28 @@ public class MainActivity extends Activity {
         // while interacting with the UI.
         findViewById(R.id.main_signin_button).setOnTouchListener(mDelayHideTouchListener);
         findViewById(R.id.main_register_button).setOnTouchListener(mDelayHideTouchListener);
+        
+        findViewById(R.id.main_register_button).setOnClickListener(new View.OnClickListener() {
+    		@Override
+    		public void onClick(View arg0) {
+    			try {
+    				
+    			} catch (Exception e) {
+    				e.printStackTrace();
+    			}
+    		}
+        });
+        
+        findViewById(R.id.main_signin_button).setOnClickListener(new View.OnClickListener() {
+    		@Override
+    		public void onClick(View arg0) {
+    			try {
+    				
+    			} catch (Exception e) {
+    				e.printStackTrace();
+    			}
+    		}
+        });
     }
 
     @Override
