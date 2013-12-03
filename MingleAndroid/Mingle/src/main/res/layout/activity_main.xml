@@ -2,7 +2,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#0099cc"
+    android:background="@drawable/main_background"
     tools:context=".MainActivity">
 
     <!-- The primary full-screen view. This can be replaced with whatever view
@@ -20,7 +20,7 @@
             android:layout_height="match_parent"
             android:layout_marginBottom="10dp"
             android:keepScreenOn="true"
-            android:textColor="#33b5e5"
+            android:textColor="#101010"
             android:textStyle="bold"
             android:textSize="50sp"
             android:gravity="center"
@@ -34,7 +34,8 @@
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
             android:layout_marginBottom="10dp"
-            android:text="@string/main_userName_text" />
+            android:text="@string/main_userName_text"
+            android:textColor="#101010" />
 
         <EditText
             android:id="@+id/main_password"
@@ -43,7 +44,8 @@
             android:layout_gravity="center"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
-            android:text="@string/main_password_text" />
+            android:text="@string/main_password_text"
+            android:textColor="#101010" />
 
     </LinearLayout>
     <!-- This FrameLayout insets its children based on system windows using
