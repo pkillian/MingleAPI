@@ -12,7 +12,9 @@ import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.View;
 import android.view.inputmethod.EditorInfo;
+import android.widget.ArrayAdapter;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.TextView;
 
 /**
@@ -49,6 +51,7 @@ public class RegisterActivity extends Activity {
     private View mLoginFormView;
     private View mLoginStatusView;
     private TextView mLoginStatusMessageView;
+    private Spinner mGender;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,10 +61,10 @@ public class RegisterActivity extends Activity {
 
         // Set up the login form.
         mEmail = getIntent().getStringExtra(EXTRA_EMAIL);
-        mEmailView = (EditText) findViewById(R.id.email);
+        mEmailView = (EditText) findViewById(R.id.register_email);
         mEmailView.setText(mEmail);
 
-        mPasswordView = (EditText) findViewById(R.id.password);
+        mPasswordView = (EditText) findViewById(R.id.register_password);
         mPasswordView.setOnEditorActionListener(new TextView.OnEditorActionListener() {
             @Override
             public boolean onEditorAction(TextView textView, int id, KeyEvent keyEvent) {
@@ -83,14 +86,16 @@ public class RegisterActivity extends Activity {
                 attemptLogin();
             }
         });
-    }
 
+        mGender = (Spinner) findViewById(R.id.register_gender);
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(
+                this,
+                R.array.gender_array,
+                android.R.layout.simple_spinner_item
+        );
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        super.onCreateOptionsMenu(menu);
-        getMenuInflater().inflate(R.menu.register, menu);
-        return true;
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        mGender.setAdapter(adapter);
     }
 
     /**

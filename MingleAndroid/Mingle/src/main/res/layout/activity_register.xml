@@ -37,7 +37,7 @@
             android:orientation="vertical">
 
             <EditText
-                android:id="@+id/email"
+                android:id="@+id/register_email"
                 android:singleLine="true"
                 android:maxLines="1"
                 android:layout_width="match_parent"
@@ -46,7 +46,7 @@
                 android:hint="@string/prompt_email" />
 
             <EditText
-                android:id="@+id/password"
+                android:id="@+id/register_password"
                 android:singleLine="true"
                 android:maxLines="1"
                 android:layout_width="match_parent"
@@ -57,7 +57,46 @@
                 android:imeActionId="@+id/login"
                 android:imeOptions="actionUnspecified" />
 
+            <EditText
+                android:id="@+id/register_userName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:singleLine="true"
+                android:maxLines="1"
+                android:hint="@string/prompt_userName"/>
 
+            <EditText
+                android:id="@+id/register_fullName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:singleLine="true"
+                android:maxLines="1"
+                android:hint="@string/prompt_fullName"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="@string/prompt_gender"
+                    android:layout_gravity="center_vertical"
+                    android:textSize="20sp"/>
+
+                <Spinner
+                    android:id="@+id/register_gender"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center_vertical"/>
+
+            </LinearLayout>
+
+            <ListView
+                android:id="@+id/register_topics"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
 
             <Button android:id="@+id/register_button"
                 android:layout_width="wrap_content"
