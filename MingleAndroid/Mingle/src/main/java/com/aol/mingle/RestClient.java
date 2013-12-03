@@ -7,7 +7,7 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 
 
-class RestClient { 
+class RestClient {
 	
     HttpURLConnection getConnection(String urlString) throws Exception {
         final URL url = new URL(urlString);
