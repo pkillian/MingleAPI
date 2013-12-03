@@ -113,7 +113,7 @@ public class MainActivity extends Activity {
         // operations to prevent the jarring behavior of controls going away
         // while interacting with the UI.
         findViewById(R.id.main_signin_button).setOnTouchListener(mDelayHideTouchListener);
-        findViewById(R.id.main_register_button).setOnTouchListener(mLaunchRegsiterListener);
+        findViewById(R.id.main_register_button).setOnTouchListener(mLaunchRegisterListener);
     }
 
     @Override
@@ -142,7 +142,7 @@ public class MainActivity extends Activity {
         }
     };
 
-    View.OnTouchListener mLaunchRegsiterListener = new View.OnTouchListener() {
+    View.OnTouchListener mLaunchRegisterListener = new View.OnTouchListener() {
         @Override
         public boolean onTouch(View view, MotionEvent motionEvent) {
             Intent registerIntent = new Intent(getApplicationContext(), RegisterActivity.class);

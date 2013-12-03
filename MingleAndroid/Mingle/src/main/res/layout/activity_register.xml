@@ -1,6 +1,9 @@
-<merge xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context=".RegisterActivity">
+    tools:context=".RegisterActivity"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:background="@drawable/main_background">
 
     <!-- Login progress -->
     <LinearLayout android:id="@+id/register_status"
@@ -28,8 +31,7 @@
     <ScrollView
         android:id="@+id/register_form"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@drawable/main_background">
+        android:layout_height="match_parent" >
 
         <LinearLayout style="@style/LoginFormContainer"
             android:orientation="vertical">
@@ -55,7 +57,9 @@
                 android:imeActionId="@+id/login"
                 android:imeOptions="actionUnspecified" />
 
-            <Button android:id="@+id/sign_in_button"
+
+
+            <Button android:id="@+id/register_button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
@@ -67,4 +71,4 @@
         </LinearLayout>
 
     </ScrollView>
-</merge>
+</FrameLayout>
