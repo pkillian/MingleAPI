@@ -24,3 +24,5 @@ POST: Inserts a message from the application to the server.
 /msg/recv  
 Methods: GET  
 GET: Returns waiting messages from the server to the application.  
+
+TODO:
