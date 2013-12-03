@@ -11,7 +11,7 @@ User adds/changes their profile...
 
   ____________________________
   |                          |
-  | User Profile             |
+  | User Profile      <save> |
   |       _________          |
   |      |         |         |
   |      |         |         |
@@ -26,7 +26,7 @@ User adds/changes their profile...
   |    Gender:    M          |
   |                          |
   |    Topics ...            |
-  ____________________________
+  |__________________________|
 
 
 User can pick topics from a list of ones that are trending in their geographical region...
@@ -48,7 +48,7 @@ User can pick topics from a list of ones that are trending in their geographical
   |      .                   |
   |      .                   |
   |      .                   |
-  ____________________________
+  |__________________________|
 
 
 User can search for topics...
@@ -70,7 +70,7 @@ User can search for topics...
   |                          |
   |                          |
   |                          |
-  ____________________________
+  |__________________________|
 
 
 User broadcasts a message to a given region...
@@ -92,7 +92,7 @@ User broadcasts a message to a given region...
   |                          |
   |        < SEND >          |
   |                          |
-  ____________________________
+  |__________________________|
 
 
 Advertiser pays to associate a message with a given region and/or topic
@@ -116,7 +116,7 @@ Another user looks for broadcasted messages...
   |                          |
   |      <scroll down>       |
   |                          |
-  ____________________________
+  |__________________________|
 
 
 
@@ -146,5 +146,5 @@ Template...
   |                          |
   |                          |
   |                          |
-  ____________________________
+  |__________________________|
 
