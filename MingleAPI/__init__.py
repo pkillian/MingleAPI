@@ -1,9 +1,13 @@
 from flask import Flask
+app = Flask(__name__)
+
 import json
 import socket
 
-app = Flask(__name__)
+import MingleAPI.authentication
+
 
 @app.route("/")
 def health_check():
     return socket.gethostname();
+
