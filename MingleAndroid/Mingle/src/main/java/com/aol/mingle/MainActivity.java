@@ -4,6 +4,7 @@ import com.aol.mingle.util.SystemUiHider;
 
 import android.annotation.TargetApi;
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
@@ -112,7 +113,7 @@ public class MainActivity extends Activity {
         // operations to prevent the jarring behavior of controls going away
         // while interacting with the UI.
         findViewById(R.id.main_signin_button).setOnTouchListener(mDelayHideTouchListener);
-        findViewById(R.id.main_register_button).setOnTouchListener(mDelayHideTouchListener);
+        findViewById(R.id.main_register_button).setOnTouchListener(mLaunchRegsiterListener);
     }
 
     @Override
@@ -137,6 +138,15 @@ public class MainActivity extends Activity {
             if (AUTO_HIDE) {
                 delayedHide(AUTO_HIDE_DELAY_MILLIS);
             }
+            return false;
+        }
+    };
+
+    View.OnTouchListener mLaunchRegsiterListener = new View.OnTouchListener() {
+        @Override
+        public boolean onTouch(View view, MotionEvent motionEvent) {
+            Intent registerIntent = new Intent(getApplicationContext(), RegisterActivity.class);
+            startActivity(registerIntent);
             return false;
         }
     };
