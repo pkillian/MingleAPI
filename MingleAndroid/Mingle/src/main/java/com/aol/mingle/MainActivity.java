@@ -124,17 +124,16 @@ public class MainActivity extends Activity {
     		}
                 });
         
-        findViewById(R.id.main_signin_button).setOnClickListener(new View.OnClickListener() {
-    		@Override
-    		public void onClick(View arg0) {
-    			try {
-    				
-    			} catch (Exception e) {
-    				e.printStackTrace();
-    			}
-    		}
-                });
+        findViewById(R.id.main_signin_button).setOnClickListener(mLaunchRegisterListener);
     }
+
+    View.OnClickListener mLaunchRegisterListener = new View.OnClickListener() {
+        @Override
+        public void onClick(View view) {
+            Intent registerIntent = new Intent(getApplicationContext(), RegisterActivity.class);
+            startActivity(registerIntent);
+        }
+    };
 
     @Override
     protected void onPostCreate(Bundle savedInstanceState) {
@@ -158,15 +157,6 @@ public class MainActivity extends Activity {
             if (AUTO_HIDE) {
                 delayedHide(AUTO_HIDE_DELAY_MILLIS);
             }
-            return false;
-        }
-    };
-
-    View.OnTouchListener mLaunchRegisterListener = new View.OnTouchListener() {
-        @Override
-        public boolean onTouch(View view, MotionEvent motionEvent) {
-            Intent registerIntent = new Intent(getApplicationContext(), RegisterActivity.class);
-            startActivity(registerIntent);
             return false;
         }
     };
